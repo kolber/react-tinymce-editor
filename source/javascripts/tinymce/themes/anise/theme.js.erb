@@ -1,0 +1,29 @@
+tinymce.ThemeManager.add('anise', function(editor) {
+  var self = this,
+      settings = editor.settings,
+      Factory = tinymce.ui.Factory;
+
+  function renderIframeUI(args) {
+    var panel = Factory.create({
+      type: 'panel',
+      classes: 'tinymce',
+      style: 'visibility: hidden',
+      layout: 'stack',
+      items: [
+        {type: 'panel', name: 'iframe', layout: 'stack', classes: 'edit-area', html: ''}
+      ]
+    });
+    panel.renderBefore(args.targetNode).reflow();
+
+    return {
+      iframeContainer: panel.find('#iframe')[0].getEl(),
+      editorContainer: panel.getEl()
+    };
+  }
+
+  self.renderUI = function(args) {
+    editor.contentCSS.push("/javascripts/tinymce.css");
+    return renderIframeUI(args);
+  };
+
+});

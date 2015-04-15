@@ -1,0 +1,146 @@
+.fieldtype_richtext {
+  clear: both;
+  margin-bottom: 2rem;
+
+  .editor {
+    border-color: #ccc;
+    border-radius: 2px;
+    border-style: solid;
+    border-width: 1px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .editor-controls {
+    background: #fff;
+    height: 36px;
+    padding: 0;
+    overflow: hidden;
+    z-index: 3;
+    position: relative;
+    border-bottom: 1px solid #ECECEC;
+    margin-bottom: -3px;
+  }
+
+  .editor-controls button {
+    background: #fff;
+    border: 0;
+    border-right: 1px solid #ECECEC;
+    color: #666;
+    cursor: pointer;
+    display: block;
+    float: left;
+    font-size: 12px;
+    height: 36px;
+    margin: 0;
+    outline: 0;
+    padding: 2px 12px 0 12px;
+    text-align: center;
+    &:hover {
+      background-color: #eee;
+    }
+    &.active,
+    &.selected {
+      background-color: #f6f6f6;
+      color: #000;
+      &:hover {
+        background-color: #ececec;
+        color: #333;
+      }
+    }
+    &.img {
+      position: relative;
+      overflow: hidden;
+    }
+    &.img input {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      cursor: pointer;
+    }
+
+    &.link .fa-unlink,
+    &.link.active .fa-link {
+      display: none;
+    }
+
+    &.active .fa-unlink,
+    &.link .fa-link {
+      display: block;
+    }
+  }
+
+  .editor-bar {
+    background: #fff;
+    box-shadow: 0.1rem 0.1rem 3rem rgba(0, 0, 0, 0.25);
+    box-sizing: border-box;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 37px;
+    width: 100%;
+    z-index: 5;
+    padding: 2rem 2rem 1rem;
+  }
+
+  .editor-bar__shade {
+    display: block;
+    position: absolute;
+    z-index: 3;
+    background: rgba(255, 255, 255, 0.7);
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    cursor: pointer;
+  }
+
+  textarea {
+    padding: 0;
+    border: 0;
+  }
+
+  .mce-container *[unselectable] {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+  }
+
+  .mce-tinymce {
+    display: block;
+    visibility: visible!important;
+    position: relative;
+  }
+
+  .mce-edit-area {
+    background: #FFF;
+    filter: none;
+  }
+
+  .mce-container,
+  .mce-container-body { display: block }
+  .mce-autoscroll { overflow: hidden }
+
+  .mce-placeholder {
+    font-family: serif;
+    font-style: italic;
+    font-size: 1em;
+    font-weight: normal;
+    left: 0px;
+    overflow: hidden;
+    opacity: 0.3;
+    padding: 1%;
+    pointer-events: none;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 98%;
+  }
+
+}
+
